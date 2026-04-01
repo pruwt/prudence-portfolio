@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* ─── CSS variables ─────────────────────────────────────────────────────────── */
+
+:root {
+  --color-bg: #F9F2ED;
+  --color-text: #2A2A2A;
+  --color-accent: #BA063D;
+  --color-muted: #888888;
+  --color-border: #E0D8D0;
+  --color-surface: #EFE8E0;
+  --color-card: #E4DBD2;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-general-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
