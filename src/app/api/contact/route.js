@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Simple in-memory rate limit: max 3 submissions per IP per 10 minutes
 const rateMap = new Map();
 const RATE_LIMIT = 3;
@@ -21,6 +19,7 @@ function isRateLimited(ip) {
 }
 
 export async function POST(req) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const ip =
       req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
